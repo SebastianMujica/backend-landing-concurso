@@ -10,7 +10,7 @@ module.exports = {
 
        // console.log('Holiss '+ cupon);
 
-        Cupon.create( cupon , async (err , data )=>{
+        Cupon.create( ...cupon, req.ip , async (err , data )=>{
 
             if (err){
                 return res.status(501).json({
