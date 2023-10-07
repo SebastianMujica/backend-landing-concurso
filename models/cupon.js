@@ -14,10 +14,11 @@ Cupon.create = (cupon, result) =>{
             telefono,
             ciudad,
             ip,
+            id_talonario,
             created_at,
             updated_at
         )
-    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     db.query(
         sql,
@@ -30,6 +31,7 @@ Cupon.create = (cupon, result) =>{
             cupon.telefono,
             cupon.ciudad,
             cupon.ip,
+            cupon.code,
             new Date(),
             new Date()
 
