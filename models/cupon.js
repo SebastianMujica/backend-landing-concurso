@@ -10,13 +10,14 @@ Cupon.create = (cupon, result) =>{
             email,
             nombre,
             apellido,
+            cedula,
             telefono,
             ciudad,
             ip,
             created_at,
             updated_at
         )
-    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)
+    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     db.query(
         sql,
@@ -25,6 +26,7 @@ Cupon.create = (cupon, result) =>{
             cupon.email,
             cupon.nombre,
             cupon.apellido,
+            cupon.cedula,
             cupon.telefono,
             cupon.ciudad,
             cupon.ip,

@@ -7,10 +7,7 @@ module.exports = {
     register( req , res ) {
 
         const cupon = req.body;
-        cupon.ip = req.ip;
-       
-        console.log(cupon);
-
+      
         Cupon.create( cupon , async (err , data )=>{
 
             if (err){
