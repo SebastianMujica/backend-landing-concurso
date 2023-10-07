@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "backend para la aplicacion de lubricantes sky",
   "main": "server.js",
+  "proxy": "https://viajacon.skylubricantes.com/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
