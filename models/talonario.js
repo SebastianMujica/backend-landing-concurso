@@ -13,8 +13,8 @@ Talonario.create = async ( talonario, result) => {
                 apellido,
                 telefono,
                 direccion_pdv,
-                id_ciudad,
-                id_user,
+                ciudad,
+                ip,
                 created_at,
                 updated_at
             )
@@ -30,8 +30,8 @@ Talonario.create = async ( talonario, result) => {
                 talonario.apellido,
                 talonario.telefono,
                 talonario.direccion_pdv,
-                talonario.id_ciudad,
-                talonario.id_user,
+                talonario.ciudad,
+                talonario.ip,
                 new Date(),
                 new Date()
             ],

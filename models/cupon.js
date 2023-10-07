@@ -11,8 +11,8 @@ Cupon.create = (cupon, result) =>{
             nombre,
             apellido,
             telefono,
-            id_ciudad,
-            id_user,
+            ciudad,
+            ip,
             created_at,
             updated_at
         )
@@ -26,8 +26,8 @@ Cupon.create = (cupon, result) =>{
             cupon.nombre,
             cupon.apellido,
             cupon.telefono,
-            cupon.id_ciudad,
-            cupon.id_user,
+            cupon.ciudad,
+            cupon.ip,
             new Date(),
             new Date()
 

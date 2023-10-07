@@ -72,21 +72,6 @@ CREATE TABLE ciudad(
     nombre VARCHAR(200) NOT NULL,
     estado VARCHAR(200) NOT NULL
 );
-CREATE TABLE cupon(
-    id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    code VARCHAR(180) NOT NULL UNIQUE,
-    email varchar(180) not null,
-    cedula varchar(180) not null,
-    nombre varchar(90) not null,
-    apellido varchar(90) not null,
-    telefono varchar(90) not null,
-    id_ciudad BIGINT NOT NULL,
-    id_user BIGINT NOT NULL,
-    created_at TIMESTAMP(0) NOT NULL,
-    updated_at TIMESTAMP(0) NOT NULL,
-    FOREIGN KEY(id_user) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY(id_ciudad) REFERENCES ciudad(id)
-);
 CREATE TABLE talonario(
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     code VARCHAR(180) NOT NULL UNIQUE,
@@ -95,10 +80,25 @@ CREATE TABLE talonario(
     apellido varchar(90) not null,
     telefono varchar(90) not null,
     direccion_pdv varchar(255) not null,
-    id_ciudad BIGINT NOT NULL,
-    id_user BIGINT NOT NULL,
-    created_at TIMESTAMP(0) NOT NULL,
-    updated_at TIMESTAMP(0) NOT NULL,
-    FOREIGN KEY(id_user) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
-    FOREIGN KEY(id_ciudad) REFERENCES ciudad(id)
-)
+    ciudad BIGINT NOT NULL,
+    ip BIGINT NOT NULL,
+    created_at TIMESTAMP(0) NOT NULL  DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP(0) NOT NULL  DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE cupon(
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    code VARCHAR(180) NOT NULL UNIQUE,
+    email varchar(180) not null,
+    cedula varchar(180) not null,
+    nombre varchar(90) not null,
+    apellido varchar(90) not null,
+    telefono varchar(90) not null,
+    ciudad varchar(90) not null,
+    ip varchar(90) not null,
+    created_at TIMESTAMP(0) NOT NULL  DEFAULT CURRENT_TIMESTAMP,	
+    updated_at TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    id_talonario BIGINT NOT NULL,
+    FOREIGN KEY(id_talonario) REFERENCES talonario(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+    
