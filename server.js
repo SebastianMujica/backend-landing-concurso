@@ -1,7 +1,14 @@
 const express = require('express');
 const app = express();
 const http = require('http');
-const server = http.createServer(app);
+var https = require('https');
+//const server = http.createServer(app);
+
+const server = https.createServer({
+                                    cert : fs.readFileSync('/etc/letsencrypt/live/apiviajacon.skylubricantes.com/fullchain.pem'),
+                                    key :  fs.readFileSync('/etc/letsencrypt/live/apiviajacon.skylubricantes.com/privkey.pem')  
+                                        },app);
+
 const logger = require('morgan');
 const cors = require('cors');
 const passport = require('passport');
