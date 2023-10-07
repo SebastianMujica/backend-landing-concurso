@@ -7,10 +7,11 @@ module.exports = {
     register( req , res ) {
 
         const cupon = req.body;
+        cupon.ip = req.ip;
+       
+        console.log(cupon);
 
-       // console.log('Holiss '+ cupon);
-
-        Cupon.create( ...cupon, req.ip , async (err , data )=>{
+        Cupon.create( cupon , async (err , data )=>{
 
             if (err){
                 return res.status(501).json({
