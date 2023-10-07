@@ -6,6 +6,7 @@ const keys = require('../config/keys');
 module.exports = {
     register( req , res ) {
 
+        console.log(req.body);
         const cupon = req.body;
       
         Cupon.create( cupon , async (err , data )=>{
