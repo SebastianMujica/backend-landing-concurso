@@ -8,7 +8,7 @@ module.exports = {
 
         const talonario = req.body;
 
-     //   console.log(talonario);
+        console.log(talonario);
 
         Talonario.create( talonario , async (err , data )=>{
 
