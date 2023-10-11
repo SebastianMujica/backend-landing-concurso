@@ -19,7 +19,7 @@ Talonario.create = async ( talonario, result) => {
                 updated_at,
                 producto
             )
-        VALUES(?,?,?,?,?,?,?,?,?,?)
+        VALUES(?,?,?,?,?,?,?,?,?,?,?)
     `;
 
     db.query(
@@ -35,7 +35,7 @@ Talonario.create = async ( talonario, result) => {
                 talonario.ip,
                 new Date(),
                 new Date(),
-                producto
+                talonario.producto
             ],
             (err, res) => {
                 if (err){

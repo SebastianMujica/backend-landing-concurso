@@ -19,7 +19,7 @@ Cupon.create = (cupon, result) =>{
             updated_at,
             producto
         )
-    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)
+    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     db.query(
         sql,
