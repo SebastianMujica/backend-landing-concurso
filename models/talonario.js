@@ -16,7 +16,8 @@ Talonario.create = async ( talonario, result) => {
                 ciudad,
                 ip,
                 created_at,
-                updated_at
+                updated_at,
+                producto
             )
         VALUES(?,?,?,?,?,?,?,?,?,?)
     `;
@@ -33,7 +34,8 @@ Talonario.create = async ( talonario, result) => {
                 talonario.ciudad,
                 talonario.ip,
                 new Date(),
-                new Date()
+                new Date(),
+                producto
             ],
             (err, res) => {
                 if (err){

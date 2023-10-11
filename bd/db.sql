@@ -67,11 +67,7 @@ CREATE TABLE user_has_roles(
     FOREIGN KEY(id_rol) REFERENCES roles(id) ON UPDATE CASCADE ON DELETE CASCADE,
     PRIMARY KEY(id_user,id_rol)
 );
-CREATE TABLE ciudad(
-    id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    nombre VARCHAR(200) NOT NULL,
-    estado VARCHAR(200) NOT NULL
-);
+
 CREATE TABLE talonario(
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     code VARCHAR(180) NOT NULL UNIQUE,
@@ -80,6 +76,7 @@ CREATE TABLE talonario(
     apellido varchar(90) not null,
     telefono varchar(90) not null,
     direccion_pdv varchar(255) not null,
+    producto varchar(255) not null,
     ciudad BIGINT NOT NULL,
     ip BIGINT NOT NULL,
     created_at TIMESTAMP(0) NOT NULL  DEFAULT CURRENT_TIMESTAMP,
@@ -95,10 +92,10 @@ CREATE TABLE cupon(
     telefono varchar(90) not null,
     ciudad varchar(90) not null,
     ip varchar(90) not null,
+    producto varchar(255) not null,
     created_at TIMESTAMP(0) NOT NULL  DEFAULT CURRENT_TIMESTAMP,	
     updated_at TIMESTAMP(0) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     id_talonario BIGINT NOT NULL,
-    FOREIGN KEY(id_talonario) REFERENCES talonario(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
     
