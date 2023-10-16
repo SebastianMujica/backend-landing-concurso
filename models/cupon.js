@@ -17,9 +17,10 @@ Cupon.create = (cupon, result) =>{
             id_talonario,
             created_at,
             updated_at,
-            producto
+            producto,
+            estado
         )
-    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     db.query(
         sql,
@@ -35,7 +36,8 @@ Cupon.create = (cupon, result) =>{
             cupon.code,
             new Date(),
             new Date(),
-            cupon.producto
+            cupon.producto,
+            cupon.estado
 
         ],
         (err, res) => {
