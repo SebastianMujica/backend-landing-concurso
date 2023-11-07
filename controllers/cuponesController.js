@@ -26,11 +26,11 @@ module.exports = {
         
         })
         },
-    getAllForId( req, res){
+    getAll( req, res){
 
         const id = req.body.id_user
 
-        Cupon.getAllByUser(id , async ( err, data )=>{
+        Cupon.getAll(id , async ( err, data )=>{
             
             if (err){
             return res.status(501).json({

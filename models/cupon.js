@@ -52,19 +52,12 @@ Cupon.create = (cupon, result) =>{
     )
 }
 
-Cupon.getAllByUser = (id_user, result)=>{
+Cupon.getAll = (result)=>{
 
-    const sql = `
-        SELECT code, email, nombre, apellido, telefono, id_ciudad 
-        FROM cupon
-        WHERE id_user = ?
-        ORDER BY created_at`;
+    const sql = `SELECT * FROM cupon ORDER BY created_at`;
 
     db.query(
         sql,
-        [
-            id_user
-        ],
         (err, data) => {
             if (err){
                 console.log('Error en la Consulta', err);

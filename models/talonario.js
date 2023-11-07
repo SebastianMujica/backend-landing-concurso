@@ -50,5 +50,21 @@ Talonario.create = async ( talonario, result) => {
             }
             )
 }
+Talonario.getAll = (result)=>{
 
+    const sql = `SELECT * FROM talonario ORDER BY created_at`;
+
+    db.query(
+        sql,
+        (err, data) => {
+            if (err){
+                console.log('Error en la Consulta', err);
+                result(err, null);
+            }else{
+                result(null, data);
+            }
+        }
+    )
+
+}
 module.exports = Talonario;

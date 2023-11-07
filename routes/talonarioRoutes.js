@@ -4,6 +4,5 @@ const passport = require('passport');
 module.exports = (app) => {
 
     app.post('/api/talonario/register', talonarioController.register);
-        
-    //app.put('/api/users/update', passport.authenticate('jwt',{session: false}) , usersController.update);
+    app.get('/api/cupones/getAll', passport.authenticate('jwt',{session: false}) , cuponesController.getAll);
 }

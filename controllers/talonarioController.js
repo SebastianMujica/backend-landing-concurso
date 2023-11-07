@@ -27,5 +27,26 @@ module.exports = {
             })
         
         })
+        },
+        getAll( req, res){
+
+            const id = req.body.id_user
+    
+            Cupon.getAll(id , async ( err, data )=>{
+                
+                if (err){
+                return res.status(501).json({
+                        success: false,
+                        message: 'Error con la consulta',
+                        error: err
+                    });
+                }
+    
+                return res.status(201).json({
+                    success: true,
+                    message: 'Consulta exitosa',
+                    data: data
+                })
+            })
         }
 }
