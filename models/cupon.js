@@ -63,6 +63,7 @@ Cupon.getAll = (result)=>{
                 console.log('Error en la Consulta', err);
                 result(err, null);
             }else{
+                console.log(result);
                 result(null, data);
             }
         }
