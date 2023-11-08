@@ -55,6 +55,7 @@ app.get('/', (req,res)=>{
 // ERROR HANDLE
 
 app.use((err,req,res,next)=>{
+    console.log(req);
     console.log(err);
     res.status(err.status || 500).send(err.stack);
 });
