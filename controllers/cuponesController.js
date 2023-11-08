@@ -26,11 +26,9 @@ module.exports = {
         
         })
         },
-    getAll( req, res){
+    async getAll( req, res){
 
-        const id = req.body.id_user
-
-        Cupon.getAll(id , async ( err, data )=>{
+        Cupon.getAll( ( err, data )=>{
             
             if (err){
             return res.status(501).json({
