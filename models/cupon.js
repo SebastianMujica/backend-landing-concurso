@@ -56,9 +56,7 @@ Cupon.getAll = (result)=>{
 
     const sql = `
         SELECT 
-            id, 
-            code, 
-            email 
+            *
         FROM 
             cupon 
         ORDER BY 
