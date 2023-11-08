@@ -30,7 +30,7 @@ module.exports = {
         },
         getAll( req, res){
 
-             Cupon.getAll( async ( err, data )=>{
+             Talonario.getAll( async ( err, data )=>{
                 
                 if (err){
                 return res.status(501).json({
